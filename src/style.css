@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #666666;
+}
+
+#game {
+  border: 1px black solid;
+  margin: 0 30px;
+}
