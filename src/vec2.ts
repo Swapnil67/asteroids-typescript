@@ -17,4 +17,19 @@ export class Vec2 {
 
     return new Vec2(nx, ny)
   }
+  sub(that: Vec2): Vec2 {
+    return new Vec2(this.x - that.x, this.y - that.y)
+  }
+
+  magnitude(): number {
+    return Math.sqrt(this.x * this.x + this.y * this.y)
+  }
+
+  scale(factor: number): Vec2 {
+    return new Vec2(this.x * factor, this.y * factor)
+  }
+
+  array(): [number, number] {
+    return [this.x, this.y]
+  }
 }

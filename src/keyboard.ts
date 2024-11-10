@@ -2,6 +2,7 @@ export enum Key {
   Space = 'Space',
   ArrowLeft = 'ArrowLeft',
   ArrowRight = 'ArrowRight',
+  ShiftLeft = 'ShiftLeft',
 }
 export class Keyboard {
   private static reservedKeys = new Set(Object.values(Key))
@@ -15,13 +16,14 @@ export class Keyboard {
 
   private handleKeyPress(e: KeyboardEvent): void {
     const key = e.code as Key
+    console.log('e ', e.type, key)
+
     if (!Keyboard.reservedKeys.has(key)) {
       return
     }
 
     e.preventDefault()
 
-    console.log('e ', e.type, key)
 
     if (e.type === 'keydown') {
       this.downKeys.add(key)
