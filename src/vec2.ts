@@ -7,6 +7,10 @@ export class Vec2 {
     this.y = y
   }
 
+  static get zero() {
+    return new Vec2(0, 0)
+  }
+
   rotate(angle: number): Vec2 {
     const angleInRadians = (angle * Math.PI) / 180
     const sinTheta = Math.sin(angleInRadians)
@@ -17,10 +21,15 @@ export class Vec2 {
 
     return new Vec2(nx, ny)
   }
+  add(that: Vec2): Vec2 {
+    return new Vec2(this.x + that.x, this.y + that.y)
+  }
+
   sub(that: Vec2): Vec2 {
     return new Vec2(this.x - that.x, this.y - that.y)
   }
 
+  // * Length of vector
   magnitude(): number {
     return Math.sqrt(this.x * this.x + this.y * this.y)
   }
